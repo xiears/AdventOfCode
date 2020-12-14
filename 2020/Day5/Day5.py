@@ -13,10 +13,25 @@ def calcSeatNo(seatString):
 
 inputs = readInput('Input/input').split("\n")
 highest = 0
+lowest = 10000
+total = 0
 
 for seat in inputs:
     currNo = calcSeatNo(seat)
+    total += currNo
     if highest < currNo:
         highest = currNo
+    if lowest > currNo:
+        lowest = currNo
 
+print (total)
+
+for val in [*range(lowest,highest+1,1)]:
+    total -= val
+
+for val in [*range(lowest,highest+1,1)]:
+    print(val)
+
+print(lowest)
 print(highest)
+print(abs(total))
